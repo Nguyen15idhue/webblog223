@@ -1,0 +1,16 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# If the request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route all backend requests to backend/index.php
+RewriteRule ^backend(/.*)?$ backend/index.php [L,QSA]
+
+# Route all frontend requests to frontend/index.php
+RewriteRule ^frontend(/.*)?$ frontend/index.php [L,QSA]
+
+# Redirect root to frontend
+RewriteRule ^$ frontend/ [L,R=301]

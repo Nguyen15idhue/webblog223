@@ -1,0 +1,35 @@
+/* Custom styles for WebBlog223 */
+
+body {
+    padding-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.jumbotron {
+    padding: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+.alert {
+    margin-bottom: 15px;
+}
