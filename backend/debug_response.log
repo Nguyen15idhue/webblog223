@@ -18,3 +18,13 @@ Response: {"success":true,"message":"Login successful","status":200,"data":{"tok
 Response: {"success":true,"message":"WebBlog223 API","version":"1.0.0","endpoints":{"\/auth\/register":"Register a new user","\/auth\/login":"Login user","\/auth\/me":"Get current user info","\/auth\/profile":"Update user profile","\/auth\/delete-account":"Delete user account","\/auth\/admin-only":"Admin only endpoint"}}
 Response: {"success":true,"message":"User retrieved successfully","status":200,"data":{"user":{"id":5,"username":"gtx6688ww","email":"Dovannsguyen2005bv@gmail.com","role":"user","created_at":"2025-09-13 23:32:05","updated_at":"2025-09-13 23:32:05"}}}
 Response: {"success":false,"message":"Access denied. Admin role required."}
+Response: {"success":true,"message":"User registered successfully","status":201,"data":{"id":9,"username":"Nguyen0908ddd","email":"dovannguyessssn2005bv@gmail.com","role":"user"}}
+Response: {"success":false,"message":"Passwords do not match","status":400}
+Response: {"success":true,"message":"User registered successfully","status":201,"data":{"id":10,"username":"newuser562","email":"user6dd5@example.com","role":"user"}}
+Response: {"success":false,"message":"Username\/email and password are required","status":400}
+Response: {"success":false,"message":"Username\/email and password are required","status":400}
+Response: {"success":false,"message":"Username\/email and password are required","status":400}
+Response: {"success":false,"message":"Username\/email and password are required","status":400}
+Response: {"success":true,"message":"Login successful","status":200,"data":{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEwLCJ1c2VybmFtZSI6Im5ld3VzZXI1NjIiLCJlbWFpbCI6InVzZXI2ZGQ1QGV4YW1wbGUuY29tIiwicm9sZSI6InVzZXIiLCJleHAiOjE3NTc5MDIwOTgsImlhdCI6MTc1Nzg5ODQ5OH0.L3jtmRYIY4vAq-kyEDb0T37J4y4FTGCpTRNMFyDqr5w","user":{"id":10,"username":"newuser562","email":"user6dd5@example.com","role":"user","created_at":"2025-09-15 08:05:27","updated_at":"2025-09-15 08:05:27"}}}
+Response: {"success":false,"message":"Route not found"}
+Response: {"success":true,"message":"Account deleted successfully","status":200}
