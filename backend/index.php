@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Include routes
 require_once __DIR__ . '/routes/auth.php';
+require_once __DIR__ . '/routes/subject.php';
 
 // Get request path
 $requestPath = getRequestPath();
@@ -42,6 +43,11 @@ if ($basePathIndex !== false && isset($pathParts[$basePathIndex + 1])) {
 if (strpos($route, '/auth') === 0) {
     // Auth routes
     authRoutes($route);
+} elseif (strpos($route, '/subjects') === 0) {
+    // Subject routes
+    $subjectRoutes = new SubjectRoutes();
+    $response = $subjectRoutes->handleRequest($_SERVER['REQUEST_METHOD'], trim($route, '/'));
+    jsonResponse($response, $response['status'] ?? 200);
 } else {
     // Default route - API info
     jsonResponse([
@@ -54,7 +60,10 @@ if (strpos($route, '/auth') === 0) {
             '/auth/me' => 'Get current user info',
             '/auth/profile' => 'Update user profile',
             '/auth/delete-account' => 'Delete user account',
-            '/auth/admin-only' => 'Admin only endpoint'
+            '/auth/admin-only' => 'Admin only endpoint',
+            '/subjects' => 'Get all subjects',
+            '/subjects/{id}' => 'Get subject by ID',
+            '/subjects/search' => 'Search subjects'
         ]
     ]);
 }
