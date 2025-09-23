@@ -1,0 +1,52 @@
+2025-09-22T20:15:10+02:00 | ENTER test_post.php | METHOD: GET | URI: /webblog223/backend/test_post.php
+Headers: Array
+(
+    [Key] => Content-Type
+    [Value] => application/json
+    [User-Agent] => PostmanRuntime/7.47.1
+    [Accept] => */*
+    [Postman-Token] => 7ac56d05-0699-4d60-839e-de52f40746ff
+    [Host] => localhost
+    [Accept-Encoding] => gzip, deflate, br
+    [Connection] => keep-alive
+)
+
+Raw: 
+----------------------------------------
+2025-09-22T20:15:42+02:00 | ENTER test_post.php | METHOD: POST | URI: /webblog223/backend/test_post.php
+Headers: Array
+(
+    [Key] => Content-Type
+    [Value] => application/json
+    [User-Agent] => PostmanRuntime/7.47.1
+    [Accept] => */*
+    [Postman-Token] => 211568b8-77a1-4686-87dc-82bafb5ca03a
+    [Host] => localhost
+    [Accept-Encoding] => gzip, deflate, br
+    [Connection] => keep-alive
+    [Content-Length] => 0
+)
+
+Raw: 
+----------------------------------------
+2025-09-22T20:17:27+02:00 | ENTER test_post.php | METHOD: POST | URI: /webblog223/backend/test_post.php
+Headers: Array
+(
+    [Key] => Content-Type
+    [Value] => application/json
+    [Content-Type] => text/plain
+    [User-Agent] => PostmanRuntime/7.47.1
+    [Accept] => */*
+    [Postman-Token] => 18ee47d6-f1dc-4465-9d61-ff2ac10daa27
+    [Host] => localhost
+    [Accept-Encoding] => gzip, deflate, br
+    [Connection] => keep-alive
+    [Content-Length] => 78
+)
+
+Raw: {
+  "post_id": 1,
+  "user_id": 1,
+  "content": "Bình luận thử nghiệm"
+}
+----------------------------------------

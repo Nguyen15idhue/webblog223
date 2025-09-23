@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/utils.php';
 
 // Handle CORS
 header('Access-Control-Allow-Origin: http://webblog223.test');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Access-Control-Allow-Credentials: true');
 
@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Include routes
 require_once __DIR__ . '/routes/auth.php';
+require_once __DIR__ . '/routes/comment.php';
+require_once __DIR__ . '/routes/report.php';
 require_once __DIR__ . '/routes/subject.php';
 
 // Get request path
@@ -41,8 +43,11 @@ if ($basePathIndex !== false && isset($pathParts[$basePathIndex + 1])) {
 
 // Route requests
 if (strpos($route, '/auth') === 0) {
-    // Auth routes
     authRoutes($route);
+} elseif (strpos($route, '/comments') === 0) {
+    commentRoutes($route);
+} elseif (strpos($route, '/comment-reports') === 0) {
+    reportRoutes($route);
 } elseif (strpos($route, '/subjects') === 0) {
     // Subject routes
     $subjectRoutes = new SubjectRoutes();
@@ -61,6 +66,16 @@ if (strpos($route, '/auth') === 0) {
             '/auth/profile' => 'Update user profile',
             '/auth/delete-account' => 'Delete user account',
             '/auth/admin-only' => 'Admin only endpoint',
+            '/comments/{post_id}' => 'Get comments for a post',
+            '/comments (POST)' => 'Create new comment (pending)',
+            '/comments/{id} (PUT)' => 'Update comment',
+            '/comments/{id} (DELETE)' => 'Delete comment',
+            '/comments/{id}/approve (PATCH)' => 'Approve comment (admin)',
+            '/comments/{id}/reject (PATCH)' => 'Reject comment (admin)',
+            '/comment-reports (POST)' => 'Create new report',
+            '/comment-reports/{comment_id}' => 'Get reports for a comment',
+            '/comment-reports (GET)' => 'Get all reports (admin)',
+            '/comment-reports/{id} (DELETE)' => 'Delete report',
             '/subjects' => 'Get all subjects',
             '/subjects/{id}' => 'Get subject by ID',
             '/subjects/search' => 'Search subjects'
