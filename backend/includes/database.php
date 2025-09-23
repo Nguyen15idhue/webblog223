@@ -8,7 +8,7 @@ class Database {
     
     private $host = 'localhost';
     private $user = 'root';
-    private $pass = '123456';  // Set your database password if needed
+    private $pass = '';  // Set your database password if needed
     private $dbname = 'webblog223';
     
     private function __construct() {
