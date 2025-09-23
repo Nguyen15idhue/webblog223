@@ -22,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Include routes
 require_once __DIR__ . '/routes/auth.php';
-require_once __DIR__ . '/routes/comment.php'; 
+require_once __DIR__ . '/routes/comment.php';
 require_once __DIR__ . '/routes/report.php';
+require_once __DIR__ . '/routes/subject.php';
 
 // Get request path
 $requestPath = getRequestPath();
@@ -44,32 +45,40 @@ if ($basePathIndex !== false && isset($pathParts[$basePathIndex + 1])) {
 if (strpos($route, '/auth') === 0) {
     authRoutes($route);
 } elseif (strpos($route, '/comments') === 0) {
-    commentRoutes($route); 
-}elseif (strpos($route, '/comment-reports') === 0) {
-    reportRoutes($route); 
-}else {
+    commentRoutes($route);
+} elseif (strpos($route, '/comment-reports') === 0) {
+    reportRoutes($route);
+} elseif (strpos($route, '/subjects') === 0) {
+    // Subject routes
+    $subjectRoutes = new SubjectRoutes();
+    $response = $subjectRoutes->handleRequest($_SERVER['REQUEST_METHOD'], trim($route, '/'));
+    jsonResponse($response, $response['status'] ?? 200);
+} else {
     // Default route - API info
     jsonResponse([
         'success' => true,
         'message' => 'WebBlog223 API',
         'version' => '1.0.0',
         'endpoints' => [
-            '/auth/register'      => 'Register a new user',
-            '/auth/login'         => 'Login user',
-            '/auth/me'            => 'Get current user info',
-            '/auth/profile'       => 'Update user profile',
-            '/auth/delete-account'=> 'Delete user account',
-            '/auth/admin-only'    => 'Admin only endpoint',
+            '/auth/register' => 'Register a new user',
+            '/auth/login' => 'Login user',
+            '/auth/me' => 'Get current user info',
+            '/auth/profile' => 'Update user profile',
+            '/auth/delete-account' => 'Delete user account',
+            '/auth/admin-only' => 'Admin only endpoint',
             '/comments/{post_id}' => 'Get comments for a post',
-            '/comments (POST)'    => 'Create new comment (pending)',
+            '/comments (POST)' => 'Create new comment (pending)',
             '/comments/{id} (PUT)' => 'Update comment',
             '/comments/{id} (DELETE)' => 'Delete comment',
             '/comments/{id}/approve (PATCH)' => 'Approve comment (admin)',
-            '/comments/{id}/reject (PATCH)'  => 'Reject comment (admin)',
+            '/comments/{id}/reject (PATCH)' => 'Reject comment (admin)',
             '/comment-reports (POST)' => 'Create new report',
             '/comment-reports/{comment_id}' => 'Get reports for a comment',
             '/comment-reports (GET)' => 'Get all reports (admin)',
             '/comment-reports/{id} (DELETE)' => 'Delete report',
+            '/subjects' => 'Get all subjects',
+            '/subjects/{id}' => 'Get subject by ID',
+            '/subjects/search' => 'Search subjects'
         ]
     ]);
 }
