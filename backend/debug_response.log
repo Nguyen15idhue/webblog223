@@ -1,0 +1,12 @@
+Response: {"success":true,"message":"WebBlog223 API","version":"1.0.0","endpoints":{"\/auth\/register":"Register a new user","\/auth\/login":"Login user","\/auth\/me":"Get current user info","\/auth\/profile":"Update user profile","\/auth\/delete-account":"Delete user account","\/auth\/admin-only":"Admin only endpoint","\/subjects":"Get all subjects","\/subjects\/{id}":"Get subject by ID","\/subjects\/search":"Search subjects"}}
+Response: {"success":true,"message":"WebBlog223 API","version":"1.0.0","endpoints":{"\/auth\/register":"Register a new user","\/auth\/login":"Login user","\/auth\/me":"Get current user info","\/auth\/profile":"Update user profile","\/auth\/delete-account":"Delete user account","\/auth\/admin-only":"Admin only endpoint","\/subjects":"Get all subjects","\/subjects\/{id}":"Get subject by ID","\/subjects\/search":"Search subjects"}}
+Response: {"success":false,"message":"Unauthorized access"}
+Response: {"success":false,"message":"Unauthorized access"}
+Response: {"success":false,"message":"Method not allowed"}
+Response: {"success":false,"message":"Method not allowed"}
+Response: {"success":true,"message":"Login successful","status":200,"data":{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoibG9uZzEyMyIsImVtYWlsIjoidGFuaGF0bG9uZzIwMUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImV4cCI6MTc1ODYwNDg2NywiaWF0IjoxNzU4NjAxMjY3fQ.JcLRrvGbgWQqU41JnPt-OWjCxmx-gvRsM4ViZJBUjIs","user":{"id":1,"username":"long123","email":"tanhatlong201@gmail.com","role":"user","created_at":"2025-09-23 07:11:47","updated_at":"2025-09-23 07:11:47"}}}
+Response: {"success":true,"message":"WebBlog223 API","version":"1.0.0","endpoints":{"\/auth\/register":"Register a new user","\/auth\/login":"Login user","\/auth\/me":"Get current user info","\/auth\/profile":"Update user profile","\/auth\/delete-account":"Delete user account","\/auth\/admin-only":"Admin only endpoint","\/subjects":"Get all subjects","\/subjects\/{id}":"Get subject by ID","\/subjects\/search":"Search subjects","\/posts":"Get all posts","\/posts\/{id}":"Get post by ID"}}
+Response: {"status":200,"message":"Subjects retrieved successfully","data":{"subjects":[{"id":1,"subject_name":"do van nguyen","content_subject":"giao duc","status":1,"created_at":"2025-09-23 11:25:59","updated_at":"2025-09-23 11:25:59"}],"total":1,"limit":0,"offset":0}}
+Response: {"success":false,"message":"Unauthorized access"}
+Response: {"success":false,"message":"Unauthorized access"}
+Response: {"success":false,"message":"Access denied. Admin role required."}
