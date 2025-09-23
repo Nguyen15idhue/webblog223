@@ -18,3 +18,15 @@ Response: {"success":true,"message":"Login successful","status":200,"data":{"tok
 Response: {"success":true,"message":"WebBlog223 API","version":"1.0.0","endpoints":{"\/auth\/register":"Register a new user","\/auth\/login":"Login user","\/auth\/me":"Get current user info","\/auth\/profile":"Update user profile","\/auth\/delete-account":"Delete user account","\/auth\/admin-only":"Admin only endpoint"}}
 Response: {"success":true,"message":"User retrieved successfully","status":200,"data":{"user":{"id":5,"username":"gtx6688ww","email":"Dovannsguyen2005bv@gmail.com","role":"user","created_at":"2025-09-13 23:32:05","updated_at":"2025-09-13 23:32:05"}}}
 Response: {"success":false,"message":"Access denied. Admin role required."}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"success":false,"message":"Post ID required"}
+Response: {"post_id":1,"user_id":1,"content":"B\u00ecnh lu\u1eadn th\u1eed nghi\u1ec7m"}
+Response: {"success":true,"report":{"id":"1","comment_id":1,"reporter_id":1,"reason":"N\u1ed9i dung kh\u00f4ng ph\u00f9 h\u1ee3p","created_at":"2025-09-23 01:48:28"}}
+Response: {"success":true,"data":[{"id":1,"comment_id":1,"reporter_id":1,"reason":"N\u1ed9i dung kh\u00f4ng ph\u00f9 h\u1ee3p","created_at":"2025-09-23 01:48:28"}]}
+Response: {"success":true,"data":[{"id":1,"comment_id":1,"reporter_id":1,"reason":"N\u1ed9i dung kh\u00f4ng ph\u00f9 h\u1ee3p","created_at":"2025-09-23 01:48:28","comment_content":"B\u00ecnh lu\u1eadn th\u1eed nghi\u1ec7m","reporter_username":"testuser"}]}
+Response: {"success":true,"message":"Report deleted"}

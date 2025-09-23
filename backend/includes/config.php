@@ -23,7 +23,7 @@ define('SESSION_LIFETIME', 86400); // Session lifetime in seconds (24 hours)
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'webblog223');
 define('DB_USER', 'root');
-define('DB_PASS', ''); // Set your database password if needed
+define('DB_PASS', '123456'); // Set your database password if needed
 
 // Error reporting settings
 error_reporting(E_ALL);
