@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // Include routes
 require_once __DIR__ . '/routes/auth.php';
 require_once __DIR__ . '/routes/subject.php';
+require_once __DIR__ . '/routes/post.php';
 
 // Get request path
 $requestPath = getRequestPath();
@@ -48,6 +49,8 @@ if (strpos($route, '/auth') === 0) {
     $subjectRoutes = new SubjectRoutes();
     $response = $subjectRoutes->handleRequest($_SERVER['REQUEST_METHOD'], trim($route, '/'));
     jsonResponse($response, $response['status'] ?? 200);
+} elseif (strpos($route, '/posts') === 0 || strpos($route, '/admin/posts') === 0) {
+    handlePostRoutes($route);
 } else {
     // Default route - API info
     jsonResponse([
@@ -63,7 +66,9 @@ if (strpos($route, '/auth') === 0) {
             '/auth/admin-only' => 'Admin only endpoint',
             '/subjects' => 'Get all subjects',
             '/subjects/{id}' => 'Get subject by ID',
-            '/subjects/search' => 'Search subjects'
+            '/subjects/search' => 'Search subjects',
+            '/posts' => 'Get all posts',
+            '/posts/{id}' => 'Get post by ID'
         ]
     ]);
 }

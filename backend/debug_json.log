@@ -1,0 +1,11 @@
+Content-Type: application/json
+Raw input: {
+    "username": "long123",
+    "password": "ngaucityboi@123"
+}
+Decoded JSON: Array
+(
+    [username] => long123
+    [password] => ngaucityboi@123
+)
+
